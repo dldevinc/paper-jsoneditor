@@ -38,10 +38,7 @@ from paper_jsoneditor.fields import JSONField
 
 
 class SampleModel(models.Model):
-    data = JSONField(
-        _("JSON"),
-        blank=True
-    )
+    data = JSONField(_("JSON"))
 
     class Meta:
         verbose_name = _("Sample")
@@ -74,10 +71,7 @@ from paper_jsoneditor.fields import OrderedJSONField
 
 
 class SampleModel(models.Model):
-    data = OrderedJSONField(
-        _("JSON"),
-        blank=True
-    )
+    data = OrderedJSONField(_("JSON"))
 
     class Meta:
         verbose_name = _("Sample")
