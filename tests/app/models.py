@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from paper_jsoneditor.fields import JSONField, OrderedJSONField
+from paper_jsoneditor.fields import OrderedJSONField
 
 
 class Sample(models.Model):
