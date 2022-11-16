@@ -9,7 +9,7 @@ JSON input widget for paper-admin.
 ## Compatibility
 
 -   `python` >= 3.6
--   `django` >= 2.2
+-   `django` >= 3.1
 -   `paper-admin` >= 4.1.0
 
 ## Installation
