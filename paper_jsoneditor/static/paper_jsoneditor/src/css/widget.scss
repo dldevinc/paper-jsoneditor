@@ -1,6 +1,6 @@
 .jsoneditor,
 .jsoneditor-menu {
-  border-color: var(--info);
+  border-color: #d0d0d0;
 }
 
 .jsoneditor {
@@ -9,6 +9,8 @@
 
 .jsoneditor-menu {
   background-color: var(--info);
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
 }
 
 .jsoneditor-statusbar {
@@ -16,11 +18,26 @@
   border-bottom-right-radius: inherit;
 }
 
+div.jsoneditor td.jsoneditor-separator {
+  vertical-align: middle;
+}
+
+div.jsoneditor-value {
+  padding: 2px 4px;
+}
+
+.jsoneditor-date {
+  margin: 2px 3px;
+  padding: 3px 7px;
+  font-family: inherit;
+}
+
 // Modals
 .jsoneditor-modal {
   padding: 3.7rem 1rem 1rem !important;
   font-size: 16px;
   font-family: inherit;
+  border-radius: var(--border-radius, 0.25rem) !important;
 
   .pico-modal-header {
     padding: 0.75rem 1rem;

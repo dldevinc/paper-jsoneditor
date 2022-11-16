@@ -1,9 +1,11 @@
-import JSONEditor from "jsoneditor";
+import ace from "./ace.js";
+import JSONEditor from "jsoneditor/dist/jsoneditor-minimalist.js";
 
-import "jsoneditor/dist/jsoneditor.min.css";
+import "jsoneditor/dist/jsoneditor.css";
 import "../css/widget.scss";
 
 const Widget = window.paperAdmin.Widget;
+
 
 class JsonWidget extends Widget {
     _init(element) {
@@ -46,10 +48,14 @@ class JsonWidget extends Widget {
     createEditor(element) {
         const textarea = element.nextElementSibling;
         const options = JSON.parse(textarea.dataset.options);
-        const aceOptions = JSON.parse(textarea.dataset.aceOptions);
+
+        const aceOptions = Object.assign({
+
+        }, JSON.parse(textarea.dataset.aceOptions));
 
         const editorOptions = Object.assign(
             {
+                ace: ace,
                 onChangeText: jsonString => {
                     textarea.value = jsonString;
                 }

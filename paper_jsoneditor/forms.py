@@ -25,6 +25,7 @@ class JSONField(forms.JSONField):
         """
         return {
             "mode": "code",
+            "enableSort": False
         }
 
     def get_ace_options(self):
