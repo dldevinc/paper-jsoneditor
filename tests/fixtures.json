@@ -22,7 +22,7 @@
   "pk": 1,
   "fields": {
     "name": "JSON-LD",
-    "data": {
+    "ordered_json": {
       "@context": {
         "@vocab": "http://schema.org/",
         "first_name": "givenName",

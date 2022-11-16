@@ -8,12 +8,6 @@ class JSONField(models.JSONField):
         kwargs.setdefault("default", dict)
         super().__init__(*args, **kwargs)
 
-    def get_internal_type(self):
-        # Используется поля БД типа TEXT.
-        # Это делает невозможным использование JSON-операторов, таких как "->" и "@>",
-        # но позволяет сохранить порядок ключей.
-        return "TextField"
-
     def formfield(self, **kwargs):
         return super().formfield(
             **{
@@ -21,3 +15,11 @@ class JSONField(models.JSONField):
                 **kwargs,
             }
         )
+
+
+class OrderedJSONField(JSONField):
+    def get_internal_type(self):
+        # Используется поля БД типа TEXT.
+        # Это делает невозможным использование JSON-операторов, таких как "->" и "@>",
+        # но позволяет сохранить порядок ключей.
+        return "TextField"

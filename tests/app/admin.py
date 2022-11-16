@@ -8,7 +8,7 @@ class SampleAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": (
-                "name", "data"
+                "name", "ordered_json"
             ),
         }),
     )
