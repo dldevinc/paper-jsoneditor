@@ -6,6 +6,7 @@ from .widgets import JSONWidget
 
 
 class JSONField(forms.JSONField):
+    empty_values = [None, "", ()]
     widget = JSONWidget
 
     def __init__(self, *args, **kwargs):

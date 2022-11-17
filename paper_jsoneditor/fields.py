@@ -4,6 +4,8 @@ from . import forms
 
 
 class JSONField(models.JSONField):
+    empty_values = [None, "", ()]
+
     def __init__(self, *args, **kwargs):
         kwargs.setdefault("default", dict)
         super().__init__(*args, **kwargs)
