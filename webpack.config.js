@@ -66,10 +66,7 @@ let config = {
                         loader: "postcss-loader",
                         options: {
                             postcssOptions: {
-                                plugins: [
-                                    pixrem(),
-                                    autoprefixer()
-                                ]
+                                plugins: [pixrem(), autoprefixer()]
                             }
                         }
                     },

@@ -6,7 +6,6 @@ import "../css/widget.scss";
 
 const Widget = window.paperAdmin.Widget;
 
-
 class JsonWidget extends Widget {
     _init(element) {
         const textarea = this.getTextarea(element);
@@ -49,9 +48,7 @@ class JsonWidget extends Widget {
         const textarea = element.nextElementSibling;
         const options = JSON.parse(textarea.dataset.options);
 
-        const aceOptions = Object.assign({
-
-        }, JSON.parse(textarea.dataset.aceOptions));
+        const aceOptions = Object.assign({}, JSON.parse(textarea.dataset.aceOptions));
 
         const editorOptions = Object.assign(
             {
