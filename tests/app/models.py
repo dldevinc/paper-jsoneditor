@@ -8,7 +8,6 @@ class Sample(models.Model):
     name = models.CharField(_("name"), max_length=128)
     ordered_json = OrderedJSONField(
         _("JSON (order preserved)"),
-        blank=True
     )
 
     class Meta:
