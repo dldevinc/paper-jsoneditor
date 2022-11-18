@@ -1,6 +1,6 @@
 # Change Log
 
-## [0.1.0](https://github.com/dldevinc/paper-jsoneditor/tree/v0.1.0) - 2022-11-18
+## [0.1.1](https://github.com/dldevinc/paper-jsoneditor/tree/v0.1.1) - 2022-11-18
 
 -   Use `JSON` db type in case of using PostgreSQL.
 
