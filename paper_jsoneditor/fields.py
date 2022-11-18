@@ -20,8 +20,13 @@ class JSONField(models.JSONField):
 
 
 class OrderedJSONField(JSONField):
-    def get_internal_type(self):
-        # Используется поля БД типа TEXT.
-        # Это делает невозможным использование JSON-операторов, таких как "->" и "@>",
-        # но позволяет сохранить порядок ключей.
-        return "TextField"
+    def db_type(self, connection):
+        if connection.vendor == "postgresql":
+            return "json"
+
+        internal_type = "TextField"
+        data = self.db_type_parameters(connection)
+        try:
+            return connection.data_types[internal_type] % data
+        except KeyError:
+            return None
