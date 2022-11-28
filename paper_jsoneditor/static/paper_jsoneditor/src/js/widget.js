@@ -68,5 +68,5 @@ class JsonWidget extends Widget {
 }
 
 const widget = new JsonWidget();
-widget.observe(".json-field");
 widget.initAll(".json-field");
+widget.observe(".json-field");
