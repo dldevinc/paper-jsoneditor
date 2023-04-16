@@ -4,6 +4,7 @@
 
 ### ⚠ BREAKING CHANGES
 
+-   Dropped Python 3.6 support.
 -   Minimum required `paper-admin` version is now `6.0.0`.
 
 ## [0.3.0](https://github.com/dldevinc/paper-jsoneditor/tree/v0.3.0) - 2022-11-30
