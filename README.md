@@ -10,7 +10,7 @@ JSON input widget for paper-admin.
 
 -   `python` >= 3.6
 -   `django` >= 3.1
--   `paper-admin` >= 4.1.0
+-   `paper-admin` >= 6.0
 
 ## Installation
 
