@@ -1,13 +1,13 @@
+/* global XClass */
 import ace from "./ace.js";
 import JSONEditor from "jsoneditor/dist/jsoneditor-minimalist.js";
 
 import "jsoneditor/dist/jsoneditor.css";
 import "../css/widget.scss";
 
-const Widget = window.paperAdmin.Widget;
 
-class JsonWidget extends Widget {
-    _init(element) {
+XClass.register("paper-jsonfield", {
+    init: function (element) {
         const textarea = this.getTextarea(element);
         if (!textarea) {
             throw new Error("textarea element not found");
@@ -25,9 +25,8 @@ class JsonWidget extends Widget {
             console.error(e);
             editor.setText(contentString);
         }
-    }
-
-    _destroy(element) {
+    },
+    destroy: function (element) {
         if (element._editor) {
             element._editor.destroy();
             element._editor = null;
@@ -37,14 +36,14 @@ class JsonWidget extends Widget {
         if (textarea) {
             textarea.hidden = false;
         }
-    }
+    },
 
-    getTextarea(element) {
+    getTextarea: function(element) {
         const textarea = element.nextElementSibling;
         return textarea.tagName === "TEXTAREA" ? textarea : null;
-    }
+    },
 
-    createEditor(element) {
+    createEditor: function(element) {
         const textarea = element.nextElementSibling;
         const options = JSON.parse(textarea.dataset.options);
 
@@ -65,15 +64,4 @@ class JsonWidget extends Widget {
 
         return editor;
     }
-}
-
-const widget = new JsonWidget();
-if (typeof widget.bind === "function") {
-    // new-style widgets
-    widget.bind(".json-field");
-    widget.attach();
-} else {
-    // old-style widgets
-    widget.initAll(".json-field");
-    widget.observe(".json-field");
-}
+});
