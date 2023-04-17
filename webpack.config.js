@@ -13,7 +13,6 @@ const __dirname = path.dirname(__filename);
 const SOURCE_DIR = path.resolve(__dirname, "paper_jsoneditor/static/paper_jsoneditor/src");
 const DIST_DIR = path.resolve(__dirname, "paper_jsoneditor/static/paper_jsoneditor/dist");
 
-
 // Базовый объект, чьи свойства наследуют все конфигурации.
 function getCommonConfig(devMode) {
     return {
@@ -21,12 +20,12 @@ function getCommonConfig(devMode) {
         devtool: devMode ? "eval" : "source-map",
         cache: devMode
             ? {
-                type: "filesystem",
-                cacheDirectory: path.resolve(__dirname, "cache"),
-                buildDependencies: {
-                    config: [__filename]
-                }
-            }
+                  type: "filesystem",
+                  cacheDirectory: path.resolve(__dirname, "cache"),
+                  buildDependencies: {
+                      config: [__filename]
+                  }
+              }
             : false,
         module: {
             rules: [
@@ -36,8 +35,8 @@ function getCommonConfig(devMode) {
                     loader: "babel-loader",
                     options: devMode
                         ? {
-                            cacheDirectory: path.resolve(__dirname, "cache")
-                        }
+                              cacheDirectory: path.resolve(__dirname, "cache")
+                          }
                         : {}
                 },
 
@@ -159,11 +158,11 @@ function getCommonConfig(devMode) {
                 devMode
                     ? []
                     : [
-                        new TerserPlugin({
-                            parallel: true
-                        }),
-                        new CssMinimizerPlugin({})
-                    ]
+                          new TerserPlugin({
+                              parallel: true
+                          }),
+                          new CssMinimizerPlugin({})
+                      ]
             )
         },
         watchOptions: {
