@@ -5,7 +5,6 @@ import JSONEditor from "jsoneditor/dist/jsoneditor-minimalist.js";
 import "jsoneditor/dist/jsoneditor.css";
 import "../css/widget.scss";
 
-
 XClass.register("paper-jsonfield", {
     init: function (element) {
         const textarea = this.getTextarea(element);
@@ -38,12 +37,12 @@ XClass.register("paper-jsonfield", {
         }
     },
 
-    getTextarea: function(element) {
+    getTextarea: function (element) {
         const textarea = element.nextElementSibling;
         return textarea.tagName === "TEXTAREA" ? textarea : null;
     },
 
-    createEditor: function(element) {
+    createEditor: function (element) {
         const textarea = element.nextElementSibling;
         const options = JSON.parse(textarea.dataset.options);
 

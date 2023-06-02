@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.4.1](https://github.com/dldevinc/paper-jsoneditor/tree/v0.4.1) - 2023-06-01
+
+-   Updated npm dependencies.
+
 ## [0.4.0](https://github.com/dldevinc/paper-jsoneditor/tree/v0.4.0) - 2023-04-16
 
 ### ⚠ BREAKING CHANGES
